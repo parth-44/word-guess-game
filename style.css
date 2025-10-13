@@ -1,0 +1,24 @@
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #333;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url("https://t3.ftcdn.net/jpg/08/07/99/82/240_F_807998249_OIfXOPTlcdyRY5WmfysUcXAXP0dafRsx.jpg");
+    display: flex;
+    padding: 0 10px;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}

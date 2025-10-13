@@ -1,4 +1,3 @@
-
 // Selecting all required elements from the DOM
 const inputs = document.querySelector(".inputs"),
   hintTag = document.querySelector(".hint span"),
@@ -22,7 +21,6 @@ let word,
 
 
 // This is the function that will be called when the user presses a key
-
 function randomWord() {
   let ranItem = wordList[Math.floor(Math.random() * wordList.length)];
   word = ranItem.word.toLowerCase();
@@ -39,3 +37,5 @@ function randomWord() {
   }
   inputs.innerHTML = html;
 }
+
+
