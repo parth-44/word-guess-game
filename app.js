@@ -39,3 +39,8 @@ function randomWord() {
 }
 
 
+
+function updateScores() {
+  currScoreTag.innerText = currScore;
+  maxScoreTag.innerText = maxScore;
+}
