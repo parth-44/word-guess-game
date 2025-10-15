@@ -51,7 +51,7 @@ function updateScores() {
 function initGame(e) {
   let key = e.target.value.toLowerCase();
   if (
-    key.match(/^[A-Za-z]+$/) &&
+    key.match (/^[A-Za-z]+$/) &&
     !incorrectLetters.includes(` ${key}`) &&
     !correctLetters.includes(key)
   ) {
@@ -90,4 +90,14 @@ function initGame(e) {
     }
   }, 100);
 }
+
+
+
+
+resetBtn.addEventListener("click", () => {
+  randomWord();
+});
+
+
+typingInput.addEventListener("input", initGame);
 
