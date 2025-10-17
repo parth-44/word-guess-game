@@ -1,29 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Word Guessing Game</title>
-    <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select Interest</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="interest-container">
 
-    <div class="wrapper">
-      <h1>Guess the Word</h1>
+    <h1>🎯 Choose Your Interest</h1>
+    <p>Select a category to start the word guessing game!</p>
 
-      <div class="content">
-        <input type="text" class="typing-input" maxlength="1" />
-        <div class="inputs"> </div>
-        <div class="details">
-          <p class="hint">Hint: <span></span></p>
-          <p class="guess-left">Remaining guesses: <span></span></p>
-          <p class="wrong-letter">Wrong letters: <span></span></p>
-        </div>
-        <button class="reset-btn">Reset Game</button>
-      </div>
+    <div class="btn-group">
+        
+      <button class="interest-btn" data-interest="coding">💻 Coding</button>
+      <button class="interest-btn" data-interest="gk">🌍 General Knowledge</button>
+      <button class="interest-btn" data-interest="history">🏺 History</button>
+      <button class="interest-btn" data-interest="sports">⚽ Sports</button>
     </div>
+  </div>
 
-    <script src="app.js"></script>
+  <script>
+    // When a user selects an interest, save it & redirect
 
-  </body>
+    document.querySelectorAll(".interest-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const selected = btn.dataset.interest;
+        localStorage.setItem("selectedInterest", selected);
+        window.location.href = "game.html"; // open the game
+      });
+    });
+
+  </script>
+</body>
 </html>

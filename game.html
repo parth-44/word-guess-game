@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Word Guessing Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <h1 >Guess the Word</h1>
+      <div class="content">
+        <input type="text" class="typing-input" maxlength="1" />
+        
+        <div class="inputs"></div>
+        <div class="scoreboard">
+            <p>Current Score: <span class="curr-score"><span>0</span></span></p>
+            <p>Max Score: <span class="max-score"><span>0</span></span></p>
+        </div>
+        <div class="details">
+          <p class="hint">Hint: <span></span></p>
+          <p class="guess-left">Remaining guesses: <span></span></p>
+          <p class="wrong-letter">Wrong letters: <span></span></p>
+        </div>
+        <button class="reset-btn">Reset Game</button>
+      </div>
+
+      <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back to Interests</button>
+
+    </div>
+
+    <script>
+  // Get selected interest from localStorage (default = 'coding')
+  const selectedInterest = localStorage.getItem("selectedInterest") || "coding";
+
+  // Define word lists by interest
+ const allWordLists = {
+  coding: [
+    { word: "variable", hint: "A container used to store data." },
+    { word: "function", hint: "A block of code that performs a task." },
+    { word: "array", hint: "Used to store multiple values in a single variable." },
+    { word: "compiler", hint: "Converts source code into machine code." },
+    { word: "loop", hint: "Repeats a block of code multiple times." },
+    { word: "object", hint: "An instance of a class in programming." },
+    { word: "debug", hint: "The process of finding and fixing errors in code." }
+  ],
+
+  gk: [
+    { word: "planet", hint: "Earth is one of these." },
+    { word: "oxygen", hint: "Essential gas for breathing." },
+    { word: "river", hint: "Flows towards an ocean or sea." },
+    { word: "continent", hint: "There are seven of these on Earth." },
+    { word: "gravity", hint: "Force that pulls objects toward Earth." },
+    { word: "satellite", hint: "An object orbiting a planet." },
+    { word: "galaxy", hint: "A huge system of stars, planets, and dust." }
+  ],
+
+  history: [
+    { word: "pyramid", hint: "Ancient Egyptian structures." },
+    { word: "empire", hint: "A group of states under one rule." },
+    { word: "battle", hint: "A fight between armed forces." },
+    { word: "dynasty", hint: "A line of hereditary rulers." },
+    { word: "revolution", hint: "A sudden political or social change." },
+    { word: "kingdom", hint: "A country ruled by a monarch." },
+    { word: "artifact", hint: "An object made by humans, typically ancient." }
+  ],
+
+  sports: [
+    { word: "cricket", hint: "Played with a bat and ball in India." },
+    { word: "tennis", hint: "Played with rackets and a net." },
+    { word: "goal", hint: "What you score in football." },
+    { word: "boxing", hint: "A fighting sport with gloves." },
+    { word: "hockey", hint: "Played with a stick and puck or ball." },
+    { word: "marathon", hint: "A long-distance running race." },
+    { word: "umpire", hint: "An official who enforces the rules of the game." }
+  ]
+};
+
+  // Assign the correct word list based on interest
+  wordList = allWordLists[selectedInterest];
+</script>
+
+    <script src="app.js"></script>
+    <!-- <script src="app.js"></script> -->
+  </body>
+</html>
