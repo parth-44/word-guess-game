@@ -95,6 +95,8 @@ function initGame(e) {
 
 
 resetBtn.addEventListener("click", () => {
+  currScore = 0;
+  updateScores();
   randomWord();
 });
 
