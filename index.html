@@ -26,6 +26,8 @@
 
     document.querySelectorAll(".interest-btn").forEach(btn => {
       btn.addEventListener("click", () => {
+        // Save selected interest to localStorage
+      
         const selected = btn.dataset.interest;
         localStorage.setItem("selectedInterest", selected);
         window.location.href = "game.html"; // open the game
